@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0800"
+   LastUpgradeVersion = "0820"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "583B38801DD52DB90079BF6E"
-               BuildableName = "image picker.app"
-               BlueprintName = "image picker"
-               ReferencedContainer = "container:image picker.xcodeproj">
+               BuildableName = "PotentialMeme.app"
+               BlueprintName = "PotentialMeme"
+               ReferencedContainer = "container:PotentialMeme.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "583B38941DD52DB90079BF6E"
-               BuildableName = "image pickerTests.xctest"
-               BlueprintName = "image pickerTests"
-               ReferencedContainer = "container:image picker.xcodeproj">
+               BuildableName = "PotentialMemeTests.xctest"
+               BlueprintName = "PotentialMemeTests"
+               ReferencedContainer = "container:PotentialMeme.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "583B389F1DD52DB90079BF6E"
-               BuildableName = "image pickerUITests.xctest"
-               BlueprintName = "image pickerUITests"
-               ReferencedContainer = "container:image picker.xcodeproj">
+               BuildableName = "PotentialMemeUITests.xctest"
+               BlueprintName = "PotentialMemeUITests"
+               ReferencedContainer = "container:PotentialMeme.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "583B38801DD52DB90079BF6E"
-            BuildableName = "image picker.app"
-            BlueprintName = "image picker"
-            ReferencedContainer = "container:image picker.xcodeproj">
+            BuildableName = "PotentialMeme.app"
+            BlueprintName = "PotentialMeme"
+            ReferencedContainer = "container:PotentialMeme.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "583B38801DD52DB90079BF6E"
-            BuildableName = "image picker.app"
-            BlueprintName = "image picker"
-            ReferencedContainer = "container:image picker.xcodeproj">
+            BuildableName = "PotentialMeme.app"
+            BlueprintName = "PotentialMeme"
+            ReferencedContainer = "container:PotentialMeme.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "583B38801DD52DB90079BF6E"
-            BuildableName = "image picker.app"
-            BlueprintName = "image picker"
-            ReferencedContainer = "container:image picker.xcodeproj">
+            BuildableName = "PotentialMeme.app"
+            BlueprintName = "PotentialMeme"
+            ReferencedContainer = "container:PotentialMeme.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

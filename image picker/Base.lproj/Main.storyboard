@@ -1,14 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Potential Meme View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PotentialMemeViewController" customModule="PotentialMeme" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +18,87 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kre-lk-K1J"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CjH-GY-eCg">
+                                <items>
+                                    <barButtonItem title="Album" id="7iN-dj-TQd">
+                                        <connections>
+                                            <action selector="pickImageFromAlbum:" destination="BYZ-38-t0r" id="IZd-NH-geg"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="camera" id="6Ta-Qa-niQ">
+                                        <connections>
+                                            <action selector="newImage:" destination="BYZ-38-t0r" id="CsU-Du-fdA"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3CI-UK-PnQ">
+                                <items>
+                                    <navigationItem title="PotentialMeme" id="ipy-DQ-dcV">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="bBR-en-fnN">
+                                            <connections>
+                                                <action selector="shareNewMeme:" destination="BYZ-38-t0r" id="qqC-qf-oH9"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="hwz-J4-uPW">
+                                            <connections>
+                                                <action selector="cancelProgress:" destination="BYZ-38-t0r" id="vgW-m1-J30"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ku4-tT-HZK">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="bKR-21-wVn">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3CI-UK-PnQ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="4en-oC-OpC"/>
+                            <constraint firstItem="CjH-GY-eCg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="58N-ZM-jdR"/>
+                            <constraint firstItem="CjH-GY-eCg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-22" id="6ks-em-s2n"/>
+                            <constraint firstItem="ku4-tT-HZK" firstAttribute="width" secondItem="Kre-lk-K1J" secondAttribute="width" id="BRv-yL-4cv"/>
+                            <constraint firstItem="bKR-21-wVn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-75" id="DkW-14-oJW"/>
+                            <constraint firstItem="Kre-lk-K1J" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="IaZ-o6-jlL"/>
+                            <constraint firstItem="bKR-21-wVn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Iue-ZX-m1g"/>
+                            <constraint firstItem="3CI-UK-PnQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="JxA-Rs-N0G"/>
+                            <constraint firstItem="bKR-21-wVn" firstAttribute="width" secondItem="Kre-lk-K1J" secondAttribute="width" id="K6D-89-wnu"/>
+                            <constraint firstItem="ku4-tT-HZK" firstAttribute="centerX" secondItem="CjH-GY-eCg" secondAttribute="centerX" id="LD4-4E-4rP"/>
+                            <constraint firstItem="CjH-GY-eCg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cE9-1M-MIw"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Kre-lk-K1J" secondAttribute="bottom" id="eAU-aR-lqK"/>
+                            <constraint firstItem="Kre-lk-K1J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eEL-5C-YLp"/>
+                            <constraint firstAttribute="trailing" secondItem="Kre-lk-K1J" secondAttribute="trailing" id="gNH-uV-tuV"/>
+                            <constraint firstItem="ku4-tT-HZK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="80" id="h5E-4g-nac"/>
+                            <constraint firstItem="3CI-UK-PnQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mBO-13-CeC"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CjH-GY-eCg" secondAttribute="bottom" id="tMB-NT-CoW"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="albumPick" destination="7iN-dj-TQd" id="DjM-dY-9rV"/>
+                        <outlet property="bottomText" destination="ku4-tT-HZK" id="LMh-wS-hxV"/>
+                        <outlet property="cameraPic" destination="6Ta-Qa-niQ" id="wpx-9X-Jhg"/>
+                        <outlet property="cancelButton" destination="hwz-J4-uPW" id="D3Z-1i-XHp"/>
+                        <outlet property="imageView" destination="Kre-lk-K1J" id="kpV-M1-mmN"/>
+                        <outlet property="navBar" destination="3CI-UK-PnQ" id="12V-ty-daf"/>
+                        <outlet property="shareButton" destination="bBR-en-fnN" id="RVq-Xc-SHB"/>
+                        <outlet property="toolBar" destination="CjH-GY-eCg" id="lhZ-fP-pzu"/>
+                        <outlet property="topText" destination="bKR-21-wVn" id="TPf-q9-79O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-29.600000000000001" y="41.829085457271368"/>
         </scene>
     </scenes>
 </document>
