@@ -50,7 +50,7 @@ class PotentialMemeViewController: UIViewController, UIImagePickerControllerDele
     
     func configureTextFields(textField: UITextField) {
         
-        let memeTextAttributes: [String:Any] = [ NSStrokeColorAttributeName: UIColor.black, NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!, NSStrokeWidthAttributeName: NSNumber(value: -3.0)]
+        let memeTextAttributes: [String:Any] = [ NSStrokeColorAttributeName: UIColor.black, NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Impact", size: 40)!, NSStrokeWidthAttributeName: NSNumber(value: -3.0)]
         
         textField.defaultTextAttributes = memeTextAttributes
         textField.textAlignment = .center
