@@ -21,7 +21,7 @@ class PotentialMemeViewController: UIViewController, UIImagePickerControllerDele
     @IBOutlet weak var albumPick: UIBarButtonItem!
     @IBOutlet weak var cameraPic: UIBarButtonItem!
     
-
+    
     
 
     
@@ -30,10 +30,20 @@ class PotentialMemeViewController: UIViewController, UIImagePickerControllerDele
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        
         configureTextFields(textField: topText)
         configureTextFields(textField: bottomText)
         topText.text = "TOP"
         bottomText.text = "BOTTOM"
+        
+        let dragBottomText = UIPanGestureRecognizer(target: self, action: #selector(userDraggedBottom))
+        let dragTopText = UIPanGestureRecognizer(target: self, action: #selector(userDraggedTop))
+        bottomText.addGestureRecognizer(dragBottomText)
+        topText.addGestureRecognizer(dragTopText)
+        bottomText.isUserInteractionEnabled = true
+        topText.isUserInteractionEnabled = true
+    
+      
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,14 +58,28 @@ class PotentialMemeViewController: UIViewController, UIImagePickerControllerDele
         unsubscribeFromKeyboardNotifications()
     }
     
+    func userDraggedBottom(gesture: UIPanGestureRecognizer) {
+        let location = gesture.location(in:self.view)
+        self.bottomText.center = location
+    }
+    
+    func userDraggedTop(gesture: UIPanGestureRecognizer) {
+        let location = gesture.location(in: self.view)
+        self.topText.center = location
+    }
+   
+    
     func configureTextFields(textField: UITextField) {
         
         let memeTextAttributes: [String:Any] = [ NSStrokeColorAttributeName: UIColor.black, NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Impact", size: 40)!, NSStrokeWidthAttributeName: NSNumber(value: -3.0)]
+       
         
         textField.defaultTextAttributes = memeTextAttributes
         textField.textAlignment = .center
         textField.delegate = self
         textField.clearsOnBeginEditing = true
+       
+        
     }
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {

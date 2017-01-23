@@ -63,14 +63,14 @@
                                 </items>
                             </navigationBar>
                             <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ku4-tT-HZK">
-                                <rect key="frame" x="0.0" y="389" width="375" height="49"/>
+                                <rect key="frame" x="0.0" y="534" width="375" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="bKR-21-wVn">
-                                <rect key="frame" x="0.0" y="234" width="375" height="49"/>
+                                <rect key="frame" x="0.0" y="104" width="375" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="40"/>
@@ -83,9 +83,9 @@
                             <constraint firstItem="CjH-GY-eCg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="58N-ZM-jdR"/>
                             <constraint firstItem="CjH-GY-eCg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-22" id="6ks-em-s2n"/>
                             <constraint firstItem="ku4-tT-HZK" firstAttribute="width" secondItem="Kre-lk-K1J" secondAttribute="width" id="BRv-yL-4cv"/>
-                            <constraint firstItem="bKR-21-wVn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-75" id="DkW-14-oJW"/>
                             <constraint firstItem="Kre-lk-K1J" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="IaZ-o6-jlL"/>
                             <constraint firstItem="bKR-21-wVn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Iue-ZX-m1g"/>
+                            <constraint firstItem="ku4-tT-HZK" firstAttribute="bottom" secondItem="CjH-GY-eCg" secondAttribute="top" constant="-40" id="JUZ-iI-N80"/>
                             <constraint firstItem="3CI-UK-PnQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="JxA-Rs-N0G"/>
                             <constraint firstItem="bKR-21-wVn" firstAttribute="width" secondItem="Kre-lk-K1J" secondAttribute="width" id="K6D-89-wnu"/>
                             <constraint firstItem="ku4-tT-HZK" firstAttribute="centerX" secondItem="CjH-GY-eCg" secondAttribute="centerX" id="LD4-4E-4rP"/>
@@ -93,7 +93,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Kre-lk-K1J" secondAttribute="bottom" id="eAU-aR-lqK"/>
                             <constraint firstItem="Kre-lk-K1J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eEL-5C-YLp"/>
                             <constraint firstAttribute="trailing" secondItem="Kre-lk-K1J" secondAttribute="trailing" id="gNH-uV-tuV"/>
-                            <constraint firstItem="ku4-tT-HZK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="80" id="h5E-4g-nac"/>
+                            <constraint firstItem="bKR-21-wVn" firstAttribute="top" secondItem="3CI-UK-PnQ" secondAttribute="bottom" constant="40" id="jVU-Wh-hv4"/>
                             <constraint firstItem="3CI-UK-PnQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mBO-13-CeC"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CjH-GY-eCg" secondAttribute="bottom" id="tMB-NT-CoW"/>
                         </constraints>

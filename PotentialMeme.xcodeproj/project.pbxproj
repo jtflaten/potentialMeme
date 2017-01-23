@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		58356DEC1E25EFD400F10DC6 /* Impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58356DEB1E25EFD400F10DC6 /* Impact.ttf */; };
-		58356DEF1E25F2DA00F10DC6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58356DEE1E25F2DA00F10DC6 /* Default-568h@2x.png */; };
 		583B38851DD52DB90079BF6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583B38841DD52DB90079BF6E /* AppDelegate.swift */; };
 		583B38871DD52DB90079BF6E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583B38861DD52DB90079BF6E /* ViewController.swift */; };
 		583B388A1DD52DB90079BF6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 583B38881DD52DB90079BF6E /* Main.storyboard */; };
@@ -38,7 +37,6 @@
 
 /* Begin PBXFileReference section */
 		58356DEB1E25EFD400F10DC6 /* Impact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Impact.ttf; sourceTree = "<group>"; };
-		58356DEE1E25F2DA00F10DC6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		583B38811DD52DB90079BF6E /* PotentialMeme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PotentialMeme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		583B38841DD52DB90079BF6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		583B38861DD52DB90079BF6E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,7 +89,6 @@
 		583B38781DD52DB90079BF6E = {
 			isa = PBXGroup;
 			children = (
-				58356DEE1E25F2DA00F10DC6 /* Default-568h@2x.png */,
 				583B38831DD52DB90079BF6E /* image picker */,
 				583B38981DD52DB90079BF6E /* image pickerTests */,
 				583B38A31DD52DB90079BF6E /* image pickerUITests */,
@@ -253,7 +250,6 @@
 				58356DEC1E25EFD400F10DC6 /* Impact.ttf in Resources */,
 				583B388F1DD52DB90079BF6E /* LaunchScreen.storyboard in Resources */,
 				583B388C1DD52DB90079BF6E /* Assets.xcassets in Resources */,
-				58356DEF1E25F2DA00F10DC6 /* Default-568h@2x.png in Resources */,
 				583B388A1DD52DB90079BF6E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
