@@ -51,6 +51,8 @@ class PotentialMemeViewController: UIViewController, UIImagePickerControllerDele
         cameraPic.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         shareButton.isEnabled = (imageView.image == nil) ? false : true
         subscribeToKeyboardNotifications()
+        navigationController?.isNavigationBarHidden = true
+        tabBarController?.tabBar.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -124,13 +126,18 @@ class PotentialMemeViewController: UIViewController, UIImagePickerControllerDele
 
     }
     
-   
-
-   
+    func backToSentMemes(){
+        if let navigationController = navigationController {
+            navigationController.popToRootViewController(animated: true)
+        }
+    }
     
     func saveMeme(_ memeImage: UIImage) {
         let meme = NewMeme(topText: topText.text!, bottomText: bottomText.text!, originalImage: imageView.image!, finishedImage: memeImage)
         
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     
     func generateFinishedImage() -> UIImage {
@@ -172,6 +179,7 @@ class PotentialMemeViewController: UIViewController, UIImagePickerControllerDele
     @IBAction func shareNewMeme(_ sender: AnyObject) {
         let newMeme = generateFinishedImage()
         let shareController = UIActivityViewController(activityItems: [newMeme], applicationActivities: nil)
+        let sentMemesController = self.storyboard!.instantiateViewController(withIdentifier: "RootTabViewController") as! UITabBarController
         self.present(shareController, animated: true, completion: nil)
         shareController.completionWithItemsHandler = {
          (activity, completed, returned, error) in
@@ -183,8 +191,8 @@ class PotentialMemeViewController: UIViewController, UIImagePickerControllerDele
                 self.imageView.image = nil
                
             }
+        self.navigationController!.popViewController(animated: true)
         }
-       
     }
 
     @IBAction func cancelProgress(_ sender: AnyObject) {
