@@ -23,7 +23,7 @@ class PotentialMemeViewController: UIViewController, UIImagePickerControllerDele
     
     
     
-
+    
     
     
     override func viewDidLoad() {
@@ -191,14 +191,16 @@ class PotentialMemeViewController: UIViewController, UIImagePickerControllerDele
                 self.imageView.image = nil
                
             }
-        self.navigationController!.popViewController(animated: true)
+        self.navigationController!.pushViewController(sentMemesController, animated: true)
         }
     }
 
     @IBAction func cancelProgress(_ sender: AnyObject) {
+        let sentMemesController = self.storyboard!.instantiateViewController(withIdentifier: "RootTabViewController") as! UITabBarController
         topText.text = "TOP"
         bottomText.text = "BOTTOM"
         imageView.image = nil
+        self.navigationController!.pushViewController(sentMemesController, animated: true)
     }
 }
 
