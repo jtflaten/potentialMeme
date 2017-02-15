@@ -17,18 +17,47 @@ class SentMemesCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        
-        let space: CGFloat = 3
-        let heightDimension = (self.view.frame.size.height - (2 * space)) / 3.0
-        let widthDimension = (self.view.frame.size.width - (2 * space)) / 3.0
-        
-        flowLayout.minimumInteritemSpacing = space
-        flowLayout.minimumLineSpacing = space
-        flowLayout.itemSize = CGSize(width: widthDimension, height: heightDimension)
-        
+        layoutCells()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = false
+        tabBarController?.tabBar.isHidden = false
+        self.collectionView?.reloadData()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
         
+    }
+    
+    struct Constants {
+        static let cellVerticalSpaicng: CGFloat = 2
+    }
+    
+    func layoutCells() {
+        var cellWidth: CGFloat
+        var cellsInRow: CGFloat
+        flowLayout.invalidateLayout()
+        
+        switch UIDevice.current.orientation {
+        case .portrait:
+            cellsInRow = 3
+        case .portraitUpsideDown:
+            cellsInRow = 3
+        case .landscapeLeft:
+            cellsInRow = 5
+        case.landscapeRight:
+            cellsInRow = 5
+        default:
+            cellsInRow = 5
+        }
+        cellWidth = collectionView!.frame.width / cellsInRow
+        cellWidth -= Constants.cellVerticalSpaicng
+        flowLayout.itemSize.width = cellWidth
+        flowLayout.itemSize.height = cellWidth
+        flowLayout.minimumInteritemSpacing = Constants.cellVerticalSpaicng
+        let actualVerticalSpacing: CGFloat = (collectionView!.frame.width - (cellsInRow * cellWidth))/(cellsInRow - 1)
+        flowLayout.minimumLineSpacing = actualVerticalSpacing
         
     }
     
@@ -43,6 +72,12 @@ class SentMemesCollectionViewController: UICollectionViewController {
         cell.memeImageView?.image = meme.finishedImage
         
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let memeDetailController = self.storyboard!.instantiateViewController(withIdentifier: "ViewMemeViewController") as! ViewMemeViewController
+        memeDetailController.meme = self.memes[(indexPath as NSIndexPath).row]
+        self.navigationController!.pushViewController(memeDetailController, animated: true) //present(memeDetailController, animated: true, completion: nil)
     }
     
     @IBAction func pushToEditor(_ sender: AnyObject){

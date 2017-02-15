@@ -5,7 +5,7 @@
 //  Created by Jake Flaten on 11/10/16.
 //  Copyright © 2016 Break List. All rights reserved.
 //
-
+import Foundation
 import UIKit
 
 class PotentialMemeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
@@ -20,9 +20,9 @@ class PotentialMemeViewController: UIViewController, UIImagePickerControllerDele
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var albumPick: UIBarButtonItem!
     @IBOutlet weak var cameraPic: UIBarButtonItem!
+        
     
-    
-    
+    var meme: NewMeme?
     
     
     
@@ -42,6 +42,12 @@ class PotentialMemeViewController: UIViewController, UIImagePickerControllerDele
         topText.addGestureRecognizer(dragTopText)
         bottomText.isUserInteractionEnabled = true
         topText.isUserInteractionEnabled = true
+        
+        if meme != nil{
+            topText.text = meme?.topText
+            bottomText.text = meme?.bottomText
+            imageView.image = meme?.originalImage
+        }
     
       
     }
@@ -125,12 +131,7 @@ class PotentialMemeViewController: UIViewController, UIImagePickerControllerDele
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
 
     }
-    
-    func backToSentMemes(){
-        if let navigationController = navigationController {
-            navigationController.popToRootViewController(animated: true)
-        }
-    }
+
     
     func saveMeme(_ memeImage: UIImage) {
         let meme = NewMeme(topText: topText.text!, bottomText: bottomText.text!, originalImage: imageView.image!, finishedImage: memeImage)
@@ -179,28 +180,25 @@ class PotentialMemeViewController: UIViewController, UIImagePickerControllerDele
     @IBAction func shareNewMeme(_ sender: AnyObject) {
         let newMeme = generateFinishedImage()
         let shareController = UIActivityViewController(activityItems: [newMeme], applicationActivities: nil)
-        let sentMemesController = self.storyboard!.instantiateViewController(withIdentifier: "RootTabViewController") as! UITabBarController
         self.present(shareController, animated: true, completion: nil)
         shareController.completionWithItemsHandler = {
          (activity, completed, returned, error) in
             if (completed){
                 self.saveMeme(newMeme)
-                self.dismiss(animated: true, completion: nil)
-                self.topText.text = "TOP"
-                self.bottomText.text = "BOTTOM"
-                self.imageView.image = nil
+//                self.topText.text = "TOP"
+//                self.bottomText.text = "BOTTOM"
+//                self.imageView.image = nil
+                self.navigationController!.popToRootViewController(animated: true) //popViewController(animated: true)
                
             }
-        self.navigationController!.pushViewController(sentMemesController, animated: true)
         }
     }
 
     @IBAction func cancelProgress(_ sender: AnyObject) {
-        let sentMemesController = self.storyboard!.instantiateViewController(withIdentifier: "RootTabViewController") as! UITabBarController
-        topText.text = "TOP"
-        bottomText.text = "BOTTOM"
-        imageView.image = nil
-        self.navigationController!.pushViewController(sentMemesController, animated: true)
+//        topText.text = "TOP"
+//        bottomText.text = "BOTTOM"
+//        imageView.image = nil
+        self.navigationController!.popToRootViewController(animated: true)
     }
 }
 
