@@ -29,6 +29,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
         memes = appDelegate.memes
         
     }
+    // I got the basis for creating the layoutCells func from looking at Warren Hansen's code for the MemeMe Udacity project. https://github.com/westsider/Meme-Me-V1-V2-for-Udacity
     
     struct Constants {
         static let cellVerticalSpaicng: CGFloat = 2

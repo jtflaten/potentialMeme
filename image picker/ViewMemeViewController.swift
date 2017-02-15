@@ -26,11 +26,7 @@ class ViewMemeViewController:  UIViewController {
     
   func editMeme() {
         let editController = self.storyboard!.instantiateViewController(withIdentifier: "PotentialMemeViewController") as! PotentialMemeViewController
-        print(meme.bottomText)
-        print(editController.topText?.text as Any)
         editController.meme = self.meme
-        print(meme.topText)
-    
         self.navigationController!.pushViewController(editController, animated: true)         
     }
 }

@@ -185,9 +185,6 @@ class PotentialMemeViewController: UIViewController, UIImagePickerControllerDele
          (activity, completed, returned, error) in
             if (completed){
                 self.saveMeme(newMeme)
-//                self.topText.text = "TOP"
-//                self.bottomText.text = "BOTTOM"
-//                self.imageView.image = nil
                 self.navigationController!.popToRootViewController(animated: true) //popViewController(animated: true)
                
             }
@@ -195,9 +192,6 @@ class PotentialMemeViewController: UIViewController, UIImagePickerControllerDele
     }
 
     @IBAction func cancelProgress(_ sender: AnyObject) {
-//        topText.text = "TOP"
-//        bottomText.text = "BOTTOM"
-//        imageView.image = nil
         self.navigationController!.popToRootViewController(animated: true)
     }
 }

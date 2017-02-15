@@ -5,6 +5,7 @@
 //  Created by Jake Flaten on 2/1/17.
 //  Copyright © 2017 Break List. All rights reserved.
 //
+//  I did use Warren Hansen's MemeMe Repo as a reference for setting up and customizing the TableView and CollectionView. https://github.com/westsider/Meme-Me-V1-V2-for-Udacity
 
 import Foundation
 import UIKit
@@ -47,10 +48,5 @@ class SentMemesTableViewController: UITableViewController {
     self.navigationController!.pushViewController(memeDetailController, animated: true)
     }
     
-//    @IBAction func pushToEditor(_ sender: AnyObject){
-//        let potentialMemeController = self.storyboard!.instantiateViewController(withIdentifier: "PotentialMemeViewController") as! PotentialMemeViewController
-//        self.navigationController!.pushViewController(potentialMemeController, animated: true)
-//        
-//    }
 }
 

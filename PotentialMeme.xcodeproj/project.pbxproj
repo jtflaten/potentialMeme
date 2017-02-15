@@ -14,7 +14,6 @@
 		583B388A1DD52DB90079BF6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 583B38881DD52DB90079BF6E /* Main.storyboard */; };
 		583B388C1DD52DB90079BF6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 583B388B1DD52DB90079BF6E /* Assets.xcassets */; };
 		583B388F1DD52DB90079BF6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 583B388D1DD52DB90079BF6E /* LaunchScreen.storyboard */; };
-		583B389A1DD52DB90079BF6E /* image_pickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583B38991DD52DB90079BF6E /* image_pickerTests.swift */; };
 		583B38A51DD52DB90079BF6E /* image_pickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583B38A41DD52DB90079BF6E /* image_pickerUITests.swift */; };
 		5861C1781DD66489001D5F5A /* NewMeme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5861C1771DD66489001D5F5A /* NewMeme.swift */; };
 		58CF38191E42E40900F9E9EC /* SentMemesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CF38181E42E40900F9E9EC /* SentMemesTableViewController.swift */; };
@@ -51,7 +50,6 @@
 		583B388E1DD52DB90079BF6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		583B38901DD52DB90079BF6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "image picker/Info.plist"; sourceTree = "<group>"; };
 		583B38951DD52DB90079BF6E /* PotentialMemeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PotentialMemeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		583B38991DD52DB90079BF6E /* image_pickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = image_pickerTests.swift; sourceTree = "<group>"; };
 		583B389B1DD52DB90079BF6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		583B38A01DD52DB90079BF6E /* PotentialMemeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PotentialMemeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		583B38A41DD52DB90079BF6E /* image_pickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = image_pickerUITests.swift; sourceTree = "<group>"; };
@@ -126,6 +124,14 @@
 			name = TableView;
 			sourceTree = "<group>";
 		};
+		581BB1721E5510D4001AF381 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5861C1771DD66489001D5F5A /* NewMeme.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		58356DED1E25EFFF00F10DC6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,8 +168,8 @@
 			children = (
 				581BB16D1E55074C001AF381 /* Storyboard */,
 				581BB16E1E550786001AF381 /* MemeViews */,
+				581BB1721E5510D4001AF381 /* Models */,
 				583B388B1DD52DB90079BF6E /* Assets.xcassets */,
-				5861C1771DD66489001D5F5A /* NewMeme.swift */,
 			);
 			path = "image picker";
 			sourceTree = "<group>";
@@ -171,7 +177,6 @@
 		583B38981DD52DB90079BF6E /* image pickerTests */ = {
 			isa = PBXGroup;
 			children = (
-				583B38991DD52DB90079BF6E /* image_pickerTests.swift */,
 				583B389B1DD52DB90079BF6E /* Info.plist */,
 			);
 			path = "image pickerTests";
@@ -337,7 +342,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				583B389A1DD52DB90079BF6E /* image_pickerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
